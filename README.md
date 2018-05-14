@@ -1,8 +1,8 @@
 # Info201_final_project
-Info 201 Final Project Proposal
-Steven Bianco
-Austin Sisley
-Allen Shi
+Info 201 Final Project Proposal:
+Steven Bianco,
+Austin Sisley,
+Allen Shi,
 Joey Ravner
 
 _What is the dataset you'll be working with?_
