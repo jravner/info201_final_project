@@ -2,10 +2,15 @@
 library(dplyr)
 library(ggplot2)
 library(alphavantager)
+
 # Using alphavantage here for more current info, quandl isn't always to date
 
 market <- av_get(symbol = "SPY", av_fun = "TIME_SERIES_DAILY_ADJUSTED", 
+<<<<<<< HEAD
                 outputsize = "full") 
+=======
+                outputsize = "full")
+>>>>>>> 753ad823dd94feb02b0ffe4d3134f32f5b39ee7a
 market$return <- (market$adjusted_close - lag(market$adjusted_close))/ 
   lag(market$adjusted_close) * 100
 market$return[1] <- 0
@@ -25,9 +30,10 @@ return_chart <- function(ticker_in, x_axis, y_axis){
   stock$expected[0] <- 0
   stock$market <- (market$adjusted_close - lag(market$adjusted_close)) /
                     lag(market$adjusted_close) * 100
-  q <- ggplot(stock, aes_string(x_axis, y_axis)) +
+  q <- ggplot(stock, aes_string(x = x_axis, y = y_axis)) +
     geom_point()
   q
 }
+test <- return_chart("AAPL", "price", "volume")
 
-test_return_chart <- return_chart("MMM", "market", "return")
+

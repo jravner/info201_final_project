@@ -3,6 +3,7 @@ library(plotly)
 library(dplyr)
 library(shinythemes)
 
+
 my_ui <- navbarPage(
   "Stock Data",
   # Give the page a title
@@ -17,7 +18,9 @@ my_ui <- navbarPage(
                textInput("start_date", label = h3("Date input (YYYY-MM-DD)"),
                          value = "NA"),
                textInput("end_date", label = h3("Date input (YYYY-MM-DD)"),
-                         value = Sys.Date())
+                         value = Sys.Date()),
+              
+               textInput("ticker", label = h3("Choose ticker symbol (XXXX)"), value = "AAPL")
              ),
              
              # Create a spot for the barplot
@@ -26,7 +29,28 @@ my_ui <- navbarPage(
              )
            )
   ),
-  tabPanel("Return"
+  tabPanel("Return",
+           titlePanel("returns"),
+           
+           sidebarLayout(
+             
+             
+             sidebarPanel(
+               textInput("ticker2", label = h3("Choose ticker symbol (XXXX)"), 
+                         value = "AAPL"),
+               selectInput("y-axis", label = h3("y-axis"), 
+                           choices = list("price" = "price", "volume" = "volume", "return" = "return",
+                                          "market" = "market", "expected" = "expected")
+                           ),
+               selectInput("x-axis", label = h3("x-axis"), 
+                           choices = list("price" = "price", "volume" = "volume", "return" = "return",
+                                          "market" = "market", "expected" = "expected")
+                           )
+             ),
+             mainPanel(
+               plotOutput("returnsPlot")  
+             )
+           )
            
   ),
   tabPanel("Analytics",
