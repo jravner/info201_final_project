@@ -10,7 +10,7 @@ my_server <- function(input, output) {
   
   # Render a plot
   output$pricePlot <- renderPlot({
-    test <- price_chart(input$ticker, input$start_date, input$end_date)
+    test <- price_chart(input$ticker, as.character(input$start_date), as.character(input$end_date))
     return(test)
   })
 
