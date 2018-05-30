@@ -17,7 +17,12 @@ my_server <- function(input, output) {
   output$returnsPlot <- renderPlot({
     test2 <- return_chart(input$ticker2, input$xaxis, input$yaxis)
     return(test2)
-  })  
+  })
+  
+  output$sectorPlot <- renderPlot({
+    test3 <- sector_growth(input$sector)
+    return(test3)
+  })
 
 }
 

@@ -24,16 +24,11 @@ price_chart <- function(ticker_in, start_in = NA, end_in = Sys.Date()
   stock$return <- (stock$price - lag(stock$price))/ lag(stock$price) * 100
   stock$return[1] <- 0
   p <- ggplot(stock, aes_string(x = "date", y = "price")) +
-    geom_line() +
-
+    geom_line(color = "blue") +
     scale_x_date(limits = c(as.Date(start_in, format = "%Y-%m-%d"),
                             as.Date(end_in, format = "%Y-%m-%d")), 
-                 date_minor_breaks = "1 year")
+                 date_minor_breaks = "1 year") +
+    labs(title = "Stock Price over Time")
   p
 }
-
-
-
-price_chart("MMM", "2000-01-01", "2005-01-01", y_axis = "price")
-
 

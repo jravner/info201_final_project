@@ -25,7 +25,8 @@ return_chart <- function(ticker_in, x_axis, y_axis){
   stock$market <- (market$adjusted_close - lag(market$adjusted_close)) /
                     lag(market$adjusted_close) * 100
   q <- ggplot(stock, aes_string(x_axis, y_axis)) +
-    geom_point()
+    geom_point(color = "red", size = 0.33) +
+    labs(title = "Stock Data Analysis")
   q
 }
 test <- return_chart("AAPL", "return", "volume")

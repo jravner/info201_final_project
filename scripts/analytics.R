@@ -45,11 +45,14 @@ sector_growth <- function(timeframe){
     filter(rank.group == timeframe)
   
   s <- ggplot(sector, aes(x = sector, y = value)) +
-    geom_col(fill = "orangered")
+    geom_col(fill = "orangered") +
+    labs(title = "Sector Performance") + 
+    theme(axis.text.x = element_text(angle = 45, hjust = 1))
   s
 }
 
 
-test_get_analytics <- get_analytics("AAPL")
+#test_get_analytics <- get_analytics("AAPL")
+#sector_growth("Rank A: Real-Time Performance")
 
 
