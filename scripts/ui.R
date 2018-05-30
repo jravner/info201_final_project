@@ -19,11 +19,11 @@ my_ui <- navbarPage(
              sidebarPanel(
                textInput("ticker", label = h3("Enter Stock Ticker:"),
                          value = "AAPL"),
-               # textInput("start_date", label = h3("Start Date (YYYY-MM-DD):"),
-               #           value = "NA"),
+               textInput("start_date", label = h3("Start Date (YYYY-MM-DD):"),
+                         value = "NA"),
                # textInput("end_date", label = h3("End Date (YYYY-MM-DD):"),
                #           value = Sys.Date()),
-               dateInput("start_date", h3("Start Date (YYYY-MM-DD):"), value = "2010-05-30", format = 'yyyy-mm-dd'),
+               #dateInput("start_date", h3("Start Date (YYYY-MM-DD):"), value = "2010-05-30", format = 'yyyy-mm-dd'),
                dateInput("end_date", h3("End Date (YYYY-MM-DD):"), value = Sys.Date(), format = 'yyyy-mm-dd'),
                p("Use the inputs to select what date range and stock you would 
                  like to view. Follow the suggested date format. \"NA\" can be
