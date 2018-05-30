@@ -1,0 +1,12 @@
+name: scripts
+title:
+username:
+account: asisley123
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 351170
+bundleId: 1401162
+url: https://asisley123.shinyapps.io/scripts/
+when: 1527708085.3486
+asMultiple: FALSE
+asStatic: FALSE

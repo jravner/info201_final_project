@@ -18,6 +18,10 @@ my_server <- function(input, output) {
     test2 <- return_chart(input$ticker2, input$xaxis, input$yaxis)
     return(test2)
   })  
+  
+  output$dataTable <- DT::renderDataTable({
+    market
+  })
 
 }
 

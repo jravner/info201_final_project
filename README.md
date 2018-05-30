@@ -6,11 +6,11 @@ Allen Shi,
 Joey Ravner
 
 _What is the dataset you'll be working with?_
-  -Quandel API for stock data.
+  -Quandle and AlphaVantager APIs are used to gather stock market data
 
 _Please include background on who collected the data, where you accessed it, and any additional information we should know about how this data came to be._
-  -Quandel collected the data, and we accessed it from:
-https://blog.quandl.com/api-for-stock-data?utm_source=google&utm_medium=organic&utm_campaign=&utm_content=api-for-stock-data
+  -Quandle and AlphaVantager collected the data, and we accessed it from:
+https://blog.quandl.com/api-for-stock-data?utm_source=google&utm_medium=organic&utm_campaign=&utm_content=api-for-stock-data we were given API keys that gave us access to day by day data including key metrics.
 
 
 _Who is your target audience? Depending on the domain of your data, there may be a variety of audiences interested in using the dataset.  You should hone in on one of these audiences._
