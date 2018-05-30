@@ -1,9 +1,10 @@
 # Creates Daily Price Chart: by company and scrub for date
 # Set Up
-library(Quandl)
+
 library(dplyr)
 library(ggplot2)
 source("../api_keys.R")
+
 
 # Test parameters
 ticker_in <- "MMM"
@@ -28,4 +29,4 @@ price_chart <- function(ticker_in, start_in = NA, end_in = Sys.Date(),
   p
 }
 
-price_chart("MMM", y_axis = "return")
+test_price <- price_chart("MMM", y_axis = "return")

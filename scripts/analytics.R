@@ -2,6 +2,7 @@
 library(dplyr)
 library(ggplot2)
 library(alphavantager)
+source("../api_keys.R")
 # Using alphavantage here for more current info, quandl isn't always to date
 
 market <- av_get(symbol = "SPY", av_fun = "TIME_SERIES_DAILY_ADJUSTED", 
@@ -44,3 +45,4 @@ sector_growth <- function(){
     geom_col(position = "dodge")
   s
 }
+test_get_analytics <- get_analytics(ticker_in)
