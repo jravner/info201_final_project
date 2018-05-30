@@ -3,6 +3,7 @@
 
 library(dplyr)
 library(ggplot2)
+library(Quandl)
 source("../api_keys.R")
 
 
@@ -24,13 +25,12 @@ price_chart <- function(ticker_in, start_in = NA, end_in = Sys.Date(),
   stock$return[1] <- 0
   p <- ggplot(stock, aes_string(x = "date", y = y_axis)) +
     geom_line() +
-    scale_x_date(limits = c(as.Date(start_in), as.Date(end_in)), 
+    scale_x_date(limits = c(as.Date(start_in, format = "%Y-%m-%d"),
+                            as.Date(end_in, format = "%Y-%m-%d")), 
                  date_minor_breaks = "1 year")
   p
 }
 
-<<<<<<< HEAD
-test_price <- price_chart("MMM", y_axis = "return")
-=======
+
 price_chart("MMM", "2000-01-01", "2005-01-01", y_axis = "price")
->>>>>>> 20e8e08b1a1ff981f6d660a051d5295f9ae12e4c
+

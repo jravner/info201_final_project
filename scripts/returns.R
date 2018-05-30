@@ -5,8 +5,9 @@ library(alphavantager)
 # Using alphavantage here for more current info, quandl isn't always to date
 
 market <- av_get(symbol = "SPY", av_fun = "TIME_SERIES_DAILY_ADJUSTED", 
-                outputsize = "full")
-market$return <- (market$price - lag(market$price))/ lag(market$price) * 100
+                outputsize = "full") 
+market$return <- (market$adjusted_close - lag(market$adjusted_close))/ 
+  lag(market$adjusted_close) * 100
 market$return[1] <- 0
 
 # Returns chart allowing user to map price, return, volume, expected return, and
