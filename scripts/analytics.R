@@ -3,7 +3,7 @@ library(dplyr)
 library(ggplot2)
 library(alphavantager)
 library(Quandl)
-source("../api_keys.R")
+library(DT)
 # Using alphavantage here for more current info, quandl isn't always to date
 
 market <- av_get(symbol = "SPY", av_fun = "TIME_SERIES_DAILY_ADJUSTED", 
@@ -14,7 +14,6 @@ market$return[1] <- 0
 
 # Funtion that returns the list of analytics
 get_analytics <- function(ticker_in){
-  ret <- list()
   stock <- av_get(symbol = ticker_in, av_fun = "TIME_SERIES_DAILY_ADJUSTED", 
                    outputsize = "full") %>% 
     select(timestamp, adjusted_close, volume)
@@ -28,14 +27,14 @@ get_analytics <- function(ticker_in){
   stock$market <- (market$adjusted_close - lag(market$adjusted_close)) /
     lag(market$adjusted_close) * 100
   last <- nrow(stock)
-  ret$ticker <- ticker_in
-  ret$price <- stock$price[last]
-  ret$expected_ret <- stock$expected[last]
-  ret$risk <- sd(stock$price)
-  ret$beta <- (sd(stock$return) * cor(stock$return, market$return)) / 
-    sd(market$return)
-  ret$alpha_avg <- mean(stock$return - stock$expected, na.rm = T)
-  ret
+  Analytic <- c("Ticker", "Price", "Expected Return", "Risk", "Beta",
+                "Average Alpha")
+  Value <- c(ticker_in, stock$price[last], stock$expected[last], 
+             sd(stock$price), 
+             (sd(stock$return) * cor(stock$return, market$return)) / 
+               sd(market$return), mean(stock$return - stock$expected, na.rm = T)
+             )
+  data <- data.frame(Analytic, Value)
 }
 
 
@@ -52,7 +51,7 @@ sector_growth <- function(timeframe){
 }
 
 
-#test_get_analytics <- get_analytics("AAPL")
+#testa <- get_analytics("AAPL")
 #sector_growth("Rank A: Real-Time Performance")
 
 

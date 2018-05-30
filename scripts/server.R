@@ -27,8 +27,7 @@ my_server <- function(input, output) {
   })  
   
   output$dataTable <- DT::renderDataTable({
-    market
-
+    get_analytics(input$analysis)
   })
 
 }

@@ -78,12 +78,12 @@ my_ui <- navbarPage(
                 value = "SPY"),
       h2("Analysis:"),
       
-      # Put table here
+      p("Please click on each row to view it's value."),
       
       DT::dataTableOutput("dataTable"),
       
-      p("From historical price data, we can calculate the expected return, for 
-        this security, the expected daily return is what the change in price 
+      p("From historical price data, we can calculate the expected return. 
+        The expected daily return is what the change in price 
         should be for tomorrow. Another thing to consider while looking at 
         stocks is the amount of risk that is taken on by owning said stock. 
         There are two main measures that assess this risk: return standard 
