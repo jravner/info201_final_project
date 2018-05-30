@@ -29,3 +29,4 @@ price_chart <- function(ticker_in, start_in = NA, end_in = Sys.Date(),
   p
 }
 
+

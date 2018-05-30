@@ -14,6 +14,8 @@ my_server <- function(input, output) {
   output$returnsPlot <- renderPlot({
     return_chart(input$ticker, input$x_axis, input$y_axis)
   })  
+
+  
 }
 
 shinyServer(my_server)

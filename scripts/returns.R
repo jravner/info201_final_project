@@ -29,4 +29,4 @@ return_chart <- function(ticker_in, x_axis, y_axis){
   q
 }
 
-test_return_chart <- return_chart("MMM", "market", "return")
+
