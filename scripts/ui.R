@@ -7,16 +7,16 @@ my_ui <- navbarPage(
   "Stock Data",
   # Give the page a title
   tabPanel("Price",
-           titlePanel("stock price"),
+           titlePanel("Stock Price"),
            
            # Generate a row with a sidebar
            sidebarLayout(      
              
              # Define the sidebar with one input
              sidebarPanel(
-               textInput("start_date", label = h3("Date input (YYYY-MM-DD)"),
+               textInput("start_date", label = h3("Start date"),
                          value = "NA"),
-               textInput("end_date", label = h3("Date input (YYYY-MM-DD)"),
+               textInput("end_date", label = h3("End date"),
                          value = Sys.Date())
              ),
              

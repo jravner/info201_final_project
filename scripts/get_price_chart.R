@@ -29,8 +29,8 @@ price_chart <- function(ticker_in, start_in = NA, end_in = Sys.Date(),
   p
 }
 
-<<<<<<< HEAD
+
 test_price <- price_chart("MMM", y_axis = "return")
-=======
+
 price_chart("MMM", "2000-01-01", "2005-01-01", y_axis = "price")
->>>>>>> 20e8e08b1a1ff981f6d660a051d5295f9ae12e4c
+
