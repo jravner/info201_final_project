@@ -25,19 +25,15 @@ price_chart <- function(ticker_in, start_in = NA, end_in = Sys.Date()
   stock$return[1] <- 0
   p <- ggplot(stock, aes_string(x = "date", y = "price")) +
     geom_line() +
-<<<<<<< HEAD
+
     scale_x_date(limits = c(as.Date(start_in, format = "%Y-%m-%d"),
                             as.Date(end_in, format = "%Y-%m-%d")), 
-=======
-    scale_x_date(limits = c(as.Date(start_in, format = "%Y-%m-%d" ), as.Date(end_in, format = "%Y-%m-%d")), 
->>>>>>> 753ad823dd94feb02b0ffe4d3134f32f5b39ee7a
                  date_minor_breaks = "1 year")
   p
 }
 
 
-<<<<<<< HEAD
+
 price_chart("MMM", "2000-01-01", "2005-01-01", y_axis = "price")
 
-=======
->>>>>>> 753ad823dd94feb02b0ffe4d3134f32f5b39ee7a
+
