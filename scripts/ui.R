@@ -1,6 +1,7 @@
 library("shiny")
 library(plotly)
 library(dplyr)
+library(DT)
 library(shinythemes)
 
 
@@ -8,7 +9,8 @@ my_ui <- navbarPage(
   "Stock Data",
   # Give the page a title
   tabPanel("Price",
-           titlePanel("Stock Price"),
+
+           titlePanel("Stock price"),
            
            # Generate a row with a sidebar
            sidebarLayout(      
@@ -78,6 +80,7 @@ my_ui <- navbarPage(
       
       # Put table here
       
+      DT::dataTableOutput("dataTable"),
       
       p("From historical price data, we can calculate the expected return, for 
         this security, the expected daily return is what the change in price 
