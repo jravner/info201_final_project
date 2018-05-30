@@ -4,11 +4,7 @@
 library(dplyr)
 library(ggplot2)
 library(Quandl)
-<<<<<<< HEAD
-source("../api_keys.R")
-=======
 
->>>>>>> 753ad823dd94feb02b0ffe4d3134f32f5b39ee7a
 
 
 # Test parameters

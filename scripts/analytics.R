@@ -48,14 +48,8 @@ sector_growth <- function(timeframe){
     geom_col(fill = "orangered")
   s
 }
-<<<<<<< HEAD
+
 
 test_get_analytics <- get_analytics("AAPL")
-=======
 
-test_get_analytics <- get_analytics(ticker_in)
-
-
-
->>>>>>> 753ad823dd94feb02b0ffe4d3134f32f5b39ee7a
 
