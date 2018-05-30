@@ -37,10 +37,12 @@ get_analytics <- function(ticker_in){
 
 
 # Function to create the sector growth plot
-sector_growth <- function(){
-  sector <- av_get(av_fun = "SECTOR")
+sector_growth <- function(timeframe){
+  sector <- av_get(av_fun = "SECTOR") %>% 
+    filter(rank.group == timeframe)
   
-  s <- ggplot(sector, aes(x = sector, y = value, fill = rank.group)) +
-    geom_col(position = "dodge")
+  s <- ggplot(sector, aes(x = sector, y = value)) +
+    geom_col(fill = "orangered")
   s
 }
+
