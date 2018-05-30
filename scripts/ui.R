@@ -38,11 +38,11 @@ my_ui <- navbarPage(
              sidebarPanel(
                textInput("ticker2", label = h3("Choose ticker symbol (XXXX)"), 
                          value = "AAPL"),
-               selectInput("y-axis", label = h3("y-axis"), 
-                           choices = list("price" = "price", "volume" = "volume", "return" = "return",
-                                          "market" = "market", "expected" = "expected")
+               selectInput("yaxis", label = h3("yaxis"), 
+                           choices = list("price","volume", "return",
+                                          "market", "expected")
                            ),
-               selectInput("x-axis", label = h3("x-axis"), 
+               selectInput("xaxis", label = h3("xaxis"), 
                            choices = list("price" = "price", "volume" = "volume", "return" = "return",
                                           "market" = "market", "expected" = "expected")
                            )

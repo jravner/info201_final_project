@@ -15,7 +15,7 @@ my_server <- function(input, output) {
   })
 
   output$returnsPlot <- renderPlot({
-    test2 <- return_chart(input$ticker2, input$x-axis, input$y-axis)
+    test2 <- return_chart(input$ticker2, input$xaxis, input$yaxis)
     return(test2)
   })  
 
