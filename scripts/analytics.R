@@ -2,6 +2,7 @@
 library(dplyr)
 library(ggplot2)
 library(alphavantager)
+library(Quandl)
 source("../api_keys.R")
 # Using alphavantage here for more current info, quandl isn't always to date
 
