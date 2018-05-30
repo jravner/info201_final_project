@@ -27,7 +27,7 @@ get_analytics <- function(ticker_in){
   stock$market <- (market$adjusted_close - lag(market$adjusted_close)) /
     lag(market$adjusted_close) * 100
   last <- nrow(stock)
-  Analytic <- c("Ticker", "Price", "Expected Return", "Risk", "Beta",
+  Analytic <- c("Ticker", "Price", "Expected Return", "Volatility", "Beta",
                 "Average Alpha")
   Value <- c(ticker_in, stock$price[last], stock$expected[last], 
              sd(stock$price), 

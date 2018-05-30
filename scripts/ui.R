@@ -86,10 +86,11 @@ my_ui <- navbarPage(
         The expected daily return is what the change in price 
         should be for tomorrow. Another thing to consider while looking at 
         stocks is the amount of risk that is taken on by owning said stock. 
-        There are two main measures that assess this risk: return standard 
-        deviation and beta. The former is a simple standard deviation of the 
-        stocks historic returns, this is a great benchmark to see how volatile 
-        the stock can be in absolute terms. A stocks beta measures how sensitive
+        There are two main measures that assess this risk: volatility and beta. 
+        The former is a simple standard deviation of the 
+        stocks historic returns, this is a great benchmark to see how risky 
+        the stock's price can be in absolute terms. A stocks beta measures how 
+        sensitive
         a security is compared to the market's movements. It can be used to 
         analyze a stocks volatily without the interference of market changes. 
         Finally, alpha is the difference between actual return and expected 
