@@ -19,7 +19,6 @@ my_server <- function(input, output) {
     return(test2)
   })  
 
-  
 }
 
 shinyServer(my_server)

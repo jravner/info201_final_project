@@ -28,6 +28,7 @@ get_analytics <- function(ticker_in){
   stock$market <- (market$adjusted_close - lag(market$adjusted_close)) /
     lag(market$adjusted_close) * 100
   last <- nrow(stock)
+  ret$ticker <- ticker_in
   ret$price <- stock$price[last]
   ret$expected_ret <- stock$expected[last]
   ret$risk <- sd(stock$price)
@@ -48,8 +49,7 @@ sector_growth <- function(timeframe){
   s
 }
 
-test_get_analytics <- get_analytics(ticker_in)
 
-
+test_get_analytics <- get_analytics("AAPL")
 
 
