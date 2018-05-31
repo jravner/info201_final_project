@@ -1,10 +1,14 @@
-library("shiny")
+library(shiny)
 library(plotly)
 library(dplyr)
+library(Quandl)
+library(alphavantager)
 source("get_price_chart.R")
 source("returns.R")
 source("analytics.R")
-
+source("../api_keys.R")
+Quandl.api_key(quandl_key)
+av_api_key(alpha_vantage_key)
 
 my_server <- function(input, output) {
   
